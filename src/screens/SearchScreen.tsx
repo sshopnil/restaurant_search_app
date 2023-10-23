@@ -9,8 +9,7 @@ const SearchScreen: React.FC = () => {
  
     const [term, setTerm] = useState<string>('');
 
-    const extractor = Object.entries(useResults);
-    const [searchAPI, results, errMsg] = extractor;
+    const [searchAPI, results, errMsg] = useResults();
 
     return (
         <View>

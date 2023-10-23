@@ -2,11 +2,12 @@ import { useEffect, useState } from "react";
 import yelp from "../api/yelp";
 
 
-export default () : [(searchTerm: string)=> void, never[], string] => {
-    const [results, setResults] = useState([]);
+export default (): [(key : string)=> void, Array<Object>, string] => {
+    
+    const [results, setResults] = useState <Array<Object>>([]);
     const [errMsg, setErrMsg] = useState<string>('');
 
-    console.log('hi here')
+    
     const searchAPI = async (searchTerm : string) => {
         try {
             const response = await yelp.get('/search', {
