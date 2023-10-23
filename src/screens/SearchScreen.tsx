@@ -9,11 +9,13 @@ const SearchScreen : React.FC = () => {
 
     const [term, setTerm] = useState<string>('');
 
-    console.log(term);
-
     return (
         <View>
-            <SearchBar term={term} onTermChange={(newTerm) => setTerm(newTerm)}/>
+            <SearchBar 
+                term={term} 
+                onTermChange={(newTerm) => setTerm(newTerm)}
+                onTermSubmit={()=> console.log('submitted')}
+            />
         </View>
     );
 };

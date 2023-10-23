@@ -6,21 +6,25 @@ import {Feather} from '@expo/vector-icons';
 
 interface SearchBarProps {
     term: string;
+    onTermSubmit :() => void;
     onTermChange: (sendToParent : string) => void;
 }
 
 
-const SearchBar : React.FC<SearchBarProps> = ({term, onTermChange}) => {
+const SearchBar : React.FC<SearchBarProps> = ({term, onTermChange, onTermSubmit}) => {
 
 
     return (
         <View style={styles.backgroundStyle}>
             <Feather name="search" style={styles.iconStyle}/>
             <TextInput
+                autoCapitalize="none"
+                autoCorrect={false}
                 placeholder="Search"
                 style={styles.inputStyle}
                 value={term}
                 onChangeText={onTermChange}
+                onEndEditing={onTermSubmit}
             />
         </View>
     );
