@@ -19,7 +19,7 @@ export default (): [(key : string)=> void, Array<Object>, string] => {
             }
             );
             setResults(response.data.businesses);
-            (response.data.businesses.length > 0 ? setErrMsg('') : null);
+            // (response.data.businesses.length > 0 ? setErrMsg('') : null);
         }
         catch (err) {
             setErrMsg('Something went wrong!!');
